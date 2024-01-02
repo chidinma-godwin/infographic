@@ -408,7 +408,7 @@ def create_infographics(df):
               "of global mortality due to the examined NCDs in 2019 " +
               "occurred in Europe, while only 9% occurred in Africa. The " +
               "Pyramid\nshows the top ten nations in Americas region with " +
-              "the highest and lowest NCD  mortality per 100,000 population " +
+              "the highest and lowest NCD mortality per 100,000 population " +
               "respectively,\nand it shows that Barbados had the highest " +
               "NCD mortality, while Peru had the lowest NCD mortality.\n" +
               "Globally, among the observed non-communicable diseases, " +
@@ -451,3 +451,21 @@ data = process_data(regions, ncd_mortality, population)
 
 # Produce the infographics
 create_infographics(data)
+
+# Add background image to the infographis
+fig = plt.figure(figsize=(47, 39), layout="constrained")
+
+infographics = plt.imread('plots/combined_plots.png')
+background_img = plt.imread('background_image.jpg')
+
+plt.imshow(background_img, aspect='auto', extent=(0, 100, 0, 100))
+plt.axis('off')
+
+fig.add_subplot(111)
+plt.imshow(infographics)
+plt.axis('off')
+
+# Delete the plots folder containing the individual plots
+shutil.rmtree("plots")
+
+plt.savefig("22076654.png", dpi=300)
