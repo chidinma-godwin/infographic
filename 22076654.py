@@ -359,9 +359,95 @@ def plot_line_graph(df):
     return
 
 
+def create_infographics(df):
+    """
+    Combines the plots to generate one plot with a title and short report
+
+    Parameters
+    ----------
+    df : DataFrame
+        The dataframe containing NCD deaths across countries.
+
+    Returns
+    -------
+    None.
+
+    """
+    df_2019 = df[df['Year'] == "2019"]
+
+    # Create the canvas to place the plots
+    fig, ax = plt.subplots(figsize=(47, 39), layout="constrained")
+    canvas = np.zeros([100, 100, 3], dtype=np.uint8)
+
+    # Create the folder to save the plots to
+    if not os.path.isdir("plots"):
+        os.makedirs("plots")
+
+    # Make the individual plots and save them as pngs in the plots folder
+    plot_pie_bar(df_2019)
+    plot_pyramid(df_2019)
+    plot_bar_graph(df_2019)
+    plot_line_graph(data)
+
+    pie_img = plt.imread('plots/pie_plot.png')
+    pyramid_img = plt.imread('plots/pyramid.png')
+    bar_img = plt.imread('plots/bar_plot.png')
+    line_plot_img = plt.imread('plots/line_plot.png')
+
+    # Place the images on the canvas
+    ax.imshow(pie_img, aspect='auto', alpha=1, extent=(2, 46, 68, 95))
+    ax.imshow(pyramid_img, aspect='auto', alpha=1, extent=(47, 98, 68, 95))
+    ax.imshow(bar_img, aspect='auto', alpha=1, extent=(2, 46, 28, 64))
+    ax.imshow(line_plot_img, aspect='auto', alpha=1, extent=(48, 98, 28, 64))
+    ax.imshow(canvas, aspect='auto', alpha=0, extent=(0, 100, 0, 100))
+
+    # Add the title and report to the canvas
+    title = "Prevalence of Non-communicable Diseases (NCD) Mortality"
+    report = ("The infographics displays the prevalence of death due to " +
+              "some non-communicable diseases in different regions.\n30% " +
+              "of global mortality due to the examined NCDs in 2019 " +
+              "occurred in Europe, while only 9% occurred in Africa. The " +
+              "Pyramid\nshows the top ten nations in Americas region with " +
+              "the highest and lowest NCD  mortality per 100,000 population " +
+              "respectively,\nand it shows that Barbados had the highest " +
+              "NCD mortality, while Peru had the lowest NCD mortality.\n" +
+              "Globally, among the observed non-communicable diseases, " +
+              "Cardiovascular diseases resulted in higher number of deaths\n" +
+              "(almost 18 million) with more deaths among males than " +
+              "females, while Diabetes Mellitus caused the lowest NCD " +
+              "deaths of about\n2 million. Lastly, all through the " +
+              "observed periods, Europe had the highest mortality due to " +
+              "Cardiovascular disease that\ndecreased slightly from " +
+              "about 500 to 450 and the highest death due to Malignant " +
+              "neoplasms which gradually increased from 200\nto about 225. " +
+              "Also, South-East Asia and Western Pacific had increasingly " +
+              "high mortality due to Chronic respiratory diseases and " +
+              "\nDiabetes mellitus respectively."
+              )
+    name_and_id = "NAME: Chidinma Esther Stephen     ID: 22076654"
+    ax.text(50, 98, title,
+            va="center", ha='center',
+            color="red", fontsize=70, weight='bold')
+    ax.text(2, 5, report, ha="left", va="baseline", color='black',
+            fontsize=50, clip_on=True)
+    ax.text(50, 2, name_and_id, va="baseline", ha="center", fontsize=40,
+            fontweight="bold", bbox={"fc": "oldlace",
+                                     "boxstyle": "square,pad=0.5"})
+
+    plt.axis('off')
+
+    plt.savefig("plots/combined_plots.png", transparent=True)
+    plt.close()
+
+    return
+
+
 # Read the data with pandas
 regions = pd.read_csv("regions.csv")
 ncd_mortality = pd.read_csv("NCD-deaths.csv", skiprows=1)
 population = pd.read_csv("population.csv")
 
 data = process_data(regions, ncd_mortality, population)
+
+# Produce the infographics
+create_infographics(data)
