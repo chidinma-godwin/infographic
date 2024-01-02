@@ -1,0 +1,197 @@
+Country Code,Country,Region
+AFG,Afghanistan,Eastern Mediterranean
+ALB,Albania,Europe
+DZA,Algeria,Africa
+AND,Andorra,Europe
+AGO,Angola,Africa
+ATG,Antigua and Barbuda,Americas
+ARG,Argentina,Americas
+ARM,Armenia,Europe
+AUS,Australia,Western Pacific
+AUT,Austria,Europe
+AZE,Azerbaijan,Europe
+BHS,Bahamas,Americas
+BHR,Bahrain,Eastern Mediterranean
+BGD,Bangladesh,South-East Asia
+BRB,Barbados,Americas
+BLR,Belarus,Europe
+BEL,Belgium,Europe
+BLZ,Belize,Americas
+BEN,Benin,Africa
+BTN,Bhutan,South-East Asia
+BOL,Bolivia (Plurinational State of),Americas
+BIH,Bosnia and Herzegovina,Europe
+BWA,Botswana,Africa
+BRA,Brazil,Americas
+BRN,Brunei Darussalam,Western Pacific
+BGR,Bulgaria,Europe
+BFA,Burkina Faso,Africa
+BDI,Burundi,Africa
+KHM,Cambodia,Western Pacific
+CMR,Cameroon,Africa
+CAN,Canada,Americas
+CPV,Cabo Verde,Africa
+CAF,Central African Republic,Africa
+TCD,Chad,Africa
+CHL,Chile,Americas
+CHN,China,Western Pacific
+COL,Colombia,Americas
+COM,Comoros,Africa
+COG,Congo,Africa
+COK,Cook Islands,Western Pacific
+CRI,Costa Rica,Americas
+HRV,Croatia,Europe
+CUB,Cuba,Americas
+CYP,Cyprus,Europe
+CZE,Czechia,Europe
+CIV,Cote d'Ivoire,Africa
+PRK,Democratic People's Republic of Korea,South-East Asia
+COD,Democratic Republic of the Congo,Africa
+DNK,Denmark,Europe
+DJI,Djibouti,Eastern Mediterranean
+DMA,Dominica,Americas
+DOM,Dominican Republic,Americas
+ECU,Ecuador,Americas
+EGY,Egypt,Eastern Mediterranean
+SLV,El Salvador,Americas
+GNQ,Equatorial Guinea,Africa
+ERI,Eritrea,Africa
+EST,Estonia,Europe
+ETH,Ethiopia,Africa
+FJI,Fiji,Western Pacific
+FIN,Finland,Europe
+FRA,France,Europe
+GAB,Gabon,Africa
+GMB,Gambia,Africa
+GEO,Georgia,Europe
+DEU,Germany,Europe
+GHA,Ghana,Africa
+GRC,Greece,Europe
+GRD,Grenada,Americas
+GTM,Guatemala,Americas
+GIN,Guinea,Africa
+GNB,Guinea-Bissau,Africa
+GUY,Guyana,Americas
+HTI,Haiti,Americas
+HND,Honduras,Americas
+HUN,Hungary,Europe
+ISL,Iceland,Europe
+IND,India,South-East Asia
+IDN,Indonesia,South-East Asia
+IRN,Iran (Islamic Republic of),Eastern Mediterranean
+IRQ,Iraq,Eastern Mediterranean
+IRL,Ireland,Europe
+ISR,Israel,Europe
+ITA,Italy,Europe
+JAM,Jamaica,Americas
+JPN,Japan,Western Pacific
+JOR,Jordan,Eastern Mediterranean
+KAZ,Kazakhstan,Europe
+KEN,Kenya,Africa
+KIR,Kiribati,Western Pacific
+KWT,Kuwait,Eastern Mediterranean
+KGZ,Kyrgyzstan,Europe
+LAO,Lao People's Democratic Republic,Western Pacific
+LVA,Latvia,Europe
+LBN,Lebanon,Eastern Mediterranean
+LSO,Lesotho,Africa
+LBR,Liberia,Africa
+LBY,Libya,Eastern Mediterranean
+LTU,Lithuania,Europe
+LUX,Luxembourg,Europe
+MDG,Madagascar,Africa
+MWI,Malawi,Africa
+MYS,Malaysia,Western Pacific
+MDV,Maldives,South-East Asia
+MLI,Mali,Africa
+MLT,Malta,Europe
+MHL,Marshall Islands,Western Pacific
+MRT,Mauritania,Africa
+MUS,Mauritius,Africa
+MEX,Mexico,Americas
+FSM,Micronesia (Federated States of),Western Pacific
+MCO,Monaco,Europe
+MNG,Mongolia,Western Pacific
+ME1,The former state union Serbia and Montenegro,South-East Asia
+MAR,Morocco,Eastern Mediterranean
+MOZ,Mozambique,Africa
+MMR,Myanmar,South-East Asia
+NAM,Namibia,Africa
+NRU,Nauru,Western Pacific
+NPL,Nepal,South-East Asia
+NLD,Netherlands (Kingdom of the),Europe
+NZL,New Zealand,Western Pacific
+NIC,Nicaragua,Americas
+NER,Niger,Africa
+NGA,Nigeria,Africa
+NIU,Niue,Western Pacific
+NOR,Norway,Europe
+OMN,Oman,Eastern Mediterranean
+PAK,Pakistan,Eastern Mediterranean
+PLW,Palau,Western Pacific
+PAN,Panama,Americas
+PNG,Papua New Guinea,Western Pacific
+PRY,Paraguay,Americas
+PER,Peru,Americas
+PHL,Philippines,Western Pacific
+POL,Poland,Europe
+PRT,Portugal,Europe
+QAT,Qatar,Eastern Mediterranean
+KOR,Republic of Korea,Western Pacific
+MDA,Republic of Moldova,Europe
+ROU,Romania,Europe
+RUS,Russian Federation,Europe
+RWA,Rwanda,Africa
+KNA,Saint Kitts and Nevis,Americas
+LCA,Saint Lucia,Americas
+VCT,Saint Vincent and the Grenadines,Americas
+WSM,Samoa,Western Pacific
+SMR,San Marino,Europe
+STP,Sao Tome and Principe,Africa
+SAU,Saudi Arabia,Eastern Mediterranean
+SEN,Senegal,Africa
+SRB,Serbia,Europe
+SYC,Seychelles,Africa
+SLE,Sierra Leone,Africa
+SGP,Singapore,Western Pacific
+SVK,Slovakia,Europe
+SVN,Slovenia,Europe
+SLB,Solomon Islands,Western Pacific
+SOM,Somalia,Eastern Mediterranean
+ZAF,South Africa,Africa
+ESP,Spain,Europe
+LKA,Sri Lanka,South-East Asia
+SDN,Sudan,Eastern Mediterranean
+SUR,Suriname,Americas
+SWZ,Eswatini,Africa
+SWE,Sweden,Europe
+CHE,Switzerland,Europe
+SYR,Syrian Arab Republic,Eastern Mediterranean
+TJK,Tajikistan,Europe
+THA,Thailand,South-East Asia
+MKD,North Macedonia,Europe
+TLS,Timor-Leste,South-East Asia
+TGO,Togo,Africa
+TON,Tonga,Western Pacific
+TTO,Trinidad and Tobago,Americas
+TUN,Tunisia,Eastern Mediterranean
+TUR,Turkiye,Europe
+TKM,Turkmenistan,Europe
+TUV,Tuvalu,Western Pacific
+UGA,Uganda,Africa
+UKR,Ukraine,Europe
+ARE,United Arab Emirates,Eastern Mediterranean
+GBR,United Kingdom of Great Britain and Northern Ireland,Europe
+TZA,United Republic of Tanzania,Africa
+USA,United States of America,Americas
+URY,Uruguay,Americas
+UZB,Uzbekistan,Europe
+VUT,Vanuatu,Western Pacific
+VEN,Venezuela (Bolivarian Republic of),Americas
+VNM,Viet Nam,Western Pacific
+YEM,Yemen,Eastern Mediterranean
+ZMB,Zambia,Africa
+ZWE,Zimbabwe,Africa
+MNE,Montenegro,Europe
+PSE,"occupied Palestinian territory, including east Jerusalem",Eastern Mediterranean
+SSD,South Sudan,Africa
