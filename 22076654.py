@@ -62,7 +62,7 @@ def process_data(regions, ncd_mortality, population):
     population.loc[population["Sex"] == "Population, total", "Sex"] = "Total"
     # Reshape the population data
     population = population.melt(id_vars=["Country Code", "Sex"],
-                                 var_name='Year', value_name='Population')
+                                 var_name="Year", value_name="Population")
     population["Year"] = pd.to_datetime(population["Year"], format="%Y")
 
     # Merge the ncd mortality and regions data, so that the merged data
@@ -71,8 +71,8 @@ def process_data(regions, ncd_mortality, population):
     # Join Male, Female, and Total columns to a single column
     ncd_regions = ncd_regions.melt(
         id_vars=["Country", "Country Code", "Year", "Causes", "Region"],
-        var_name='Sex', value_vars=['Total', 'Male', 'Female'],
-        value_name='Number of Deaths')
+        var_name="Sex", value_vars=["Total", "Male", "Female"],
+        value_name="Number of Deaths")
     ncd_regions["Year"] = pd.to_datetime(ncd_regions["Year"], format="%Y")
 
     # Merge the population data to the ncd mortality and regions data
@@ -122,7 +122,7 @@ def plot_pie_bar(df_2019):
     # Plot the pie chart and rotate it to place the first wedge in
     # the desired position
     patches, texts, pcts = ax1.pie(df_to_plot.sum(axis=1),
-                                   labels=df_to_plot.index, autopct='%1.1f%%',
+                                   labels=df_to_plot.index, autopct="%1.1f%%",
                                    startangle=-180 * 0.27, explode=explode)
 
     # Set the text color outside each patch to the color of the patch
@@ -132,7 +132,7 @@ def plot_pie_bar(df_2019):
         texts[i].set_fontsize(30)
 
     # Change the color of the percentage text inside the pie to white
-    plt.setp(pcts, color='white', fontweight="bold", fontsize=26)
+    plt.setp(pcts, color="white", fontweight="bold", fontsize=26)
 
     # Plot the bar chart showing the male and female NCD mortality per 100,000
     # for the region with the highest NCD mortality
@@ -140,14 +140,14 @@ def plot_pie_bar(df_2019):
     df_to_plot.loc[["Europe"], ["Female", "Male"]].plot.bar(
         ax=ax2, width=width, color=plt.colormaps["tab20c"]([0, 1]))
 
-    # Show the male and female NCD mortality per 100,000 population in the bars
+    # Show the NCD mortality per 100,000 population in the bars
     for p in ax2.patches:
         ax2.annotate(str(p.get_height().round().astype(int)),
                      (p.get_x() + (p.get_width() / 2), p.get_height()/2),
-                     ha="center", color='w', weight='bold', fontsize=28)
+                     ha="center", color="w", weight="bold", fontsize=28)
 
     ax2.legend(loc=("upper center"), fontsize=26, bbox_to_anchor=[0.9, 1.06])
-    ax2.axis('off')
+    ax2.axis("off")
 
     # Draw lines between the pie and bar plots with ConnectionPatch
     theta1, theta2 = patches[0].theta1, patches[0].theta2
@@ -194,7 +194,7 @@ def plot_pyramid(df_2019):
     None.
 
     """
-    fig, ax = plt.subplots(figsize=(23, 12), layout='constrained')
+    fig, ax = plt.subplots(figsize=(23, 12), layout="constrained")
 
     # Sum the NCD mortality for all examined NCDs per 100,000 population
     # in each country for the year 2019 and select data for Americas region.
@@ -225,12 +225,12 @@ def plot_pyramid(df_2019):
     # Reshape the dataframe for easy plotting
     df = df.melt(id_vars="Country", value_name="Deaths", var_name="Sex")
 
-    sns.barplot(x='Deaths', y='Country', data=df, hue="Sex", dodge=False,
+    sns.barplot(x="Deaths", y="Country", data=df, hue="Sex", dodge=False,
                 palette=[plt.cm.Spectral(1.0), plt.cm.Spectral(0.0)])
 
     ax.set_ylabel(None)
     ax.set_xlabel("NCD deaths per 100,000 population", fontsize=32)
-    ax.tick_params(axis='y', labelsize=30)
+    ax.tick_params(axis="y", labelsize=30)
     ticks = ax.get_xticks()
     ax.set_xticks(ticks=ticks, labels=[abs(i) for i in ticks], size=26)
     ax.set_title("Pyramid of Countries With the Highest and Lowest NCD " +
@@ -270,7 +270,7 @@ def plot_bar_graph(df_2019):
         by="Total")[["Male", "Female"]]
     df_millions = df / 1_000_000
 
-    fig, ax = plt.subplots(figsize=(18, 14),  layout='constrained')
+    fig, ax = plt.subplots(figsize=(18, 14),  layout="constrained")
 
     df_millions.plot.barh(ax=ax, fontsize=30)
     ax.set_title("Global NCD Deaths by Cause and Sex in 2019",
@@ -280,12 +280,12 @@ def plot_bar_graph(df_2019):
     for p in ax.patches:
         ax.text(x=p.get_width() / 2, y=p.get_y() + p.get_height() / 2,
                 s=f"{p.get_width().round(1)} M", ha="center",
-                va="center", color="w", weight='bold', size=28)
+                va="center", color="w", weight="bold", size=28)
 
     ax.set_frame_on(False)
     ax.set_ylabel(None)
     ax.set_xlabel("Number of NCD deaths in millons", fontsize=36)
-    ax.xaxis.set_major_formatter('{x:0.0f} M')
+    ax.xaxis.set_major_formatter("{x:0.0f} M")
     ax.legend(fontsize=32, ncols=2)
 
     plt.savefig("plots/bar_plot.png", bbox_inches="tight", transparent=True)
@@ -337,8 +337,8 @@ def plot_line_graph(df):
 
         ax.set_ylabel(disease, fontsize=34)
         ax.set_xlabel("Year", fontsize=30)
-        ax.tick_params(axis='x', labelsize=28)
-        ax.tick_params(axis='y', labelsize=28)
+        ax.tick_params(axis="x", labelsize=28)
+        ax.tick_params(axis="y", labelsize=28)
         ax.set_frame_on(False)
 
         # Set the axes to make the next plot on
@@ -373,7 +373,7 @@ def create_infographics(df):
     None.
 
     """
-    df_2019 = df[df['Year'] == "2019"]
+    df_2019 = df[df["Year"] == "2019"]
 
     # Create the canvas to place the plots
     fig, ax = plt.subplots(figsize=(47, 39), layout="constrained")
@@ -389,17 +389,17 @@ def create_infographics(df):
     plot_bar_graph(df_2019)
     plot_line_graph(data)
 
-    pie_img = plt.imread('plots/pie_plot.png')
-    pyramid_img = plt.imread('plots/pyramid.png')
-    bar_img = plt.imread('plots/bar_plot.png')
-    line_plot_img = plt.imread('plots/line_plot.png')
+    pie_img = plt.imread("plots/pie_plot.png")
+    pyramid_img = plt.imread("plots/pyramid.png")
+    bar_img = plt.imread("plots/bar_plot.png")
+    line_plot_img = plt.imread("plots/line_plot.png")
 
     # Place the images on the canvas
-    ax.imshow(pie_img, aspect='auto', alpha=1, extent=(2, 46, 68, 95))
-    ax.imshow(pyramid_img, aspect='auto', alpha=1, extent=(47, 98, 68, 95))
-    ax.imshow(bar_img, aspect='auto', alpha=1, extent=(2, 46, 28, 64))
-    ax.imshow(line_plot_img, aspect='auto', alpha=1, extent=(48, 98, 28, 64))
-    ax.imshow(canvas, aspect='auto', alpha=0, extent=(0, 100, 0, 100))
+    ax.imshow(pie_img, aspect="auto", alpha=1, extent=(2, 46, 68, 95))
+    ax.imshow(pyramid_img, aspect="auto", alpha=1, extent=(47, 98, 68, 95))
+    ax.imshow(bar_img, aspect="auto", alpha=1, extent=(2, 46, 28, 64))
+    ax.imshow(line_plot_img, aspect="auto", alpha=1, extent=(48, 98, 28, 64))
+    ax.imshow(canvas, aspect="auto", alpha=0, extent=(0, 100, 0, 100))
 
     # Add the title and report to the canvas
     title = "Prevalence of Non-communicable Diseases (NCD) Mortality"
@@ -426,15 +426,15 @@ def create_infographics(df):
               )
     name_and_id = "NAME: Chidinma Esther Stephen     ID: 22076654"
     ax.text(50, 98, title,
-            va="center", ha='center',
-            color="red", fontsize=70, weight='bold')
-    ax.text(2, 5, report, ha="left", va="baseline", color='black',
+            va="center", ha="center",
+            color="red", fontsize=70, weight="bold")
+    ax.text(2, 5, report, ha="left", va="baseline", color="black",
             fontsize=50, clip_on=True)
     ax.text(50, 2, name_and_id, va="baseline", ha="center", fontsize=40,
             fontweight="bold", bbox={"fc": "oldlace",
                                      "boxstyle": "square,pad=0.5"})
 
-    plt.axis('off')
+    plt.axis("off")
 
     plt.savefig("plots/combined_plots.png", transparent=True)
     plt.close()
@@ -455,15 +455,15 @@ create_infographics(data)
 # Add background image to the infographis
 fig = plt.figure(figsize=(47, 39), layout="constrained")
 
-infographics = plt.imread('plots/combined_plots.png')
-background_img = plt.imread('background_image.jpg')
+infographics = plt.imread("plots/combined_plots.png")
+background_img = plt.imread("background_image.jpg")
 
-plt.imshow(background_img, aspect='auto', extent=(0, 100, 0, 100))
-plt.axis('off')
+plt.imshow(background_img, aspect="auto", extent=(0, 100, 0, 100))
+plt.axis("off")
 
 fig.add_subplot(111)
 plt.imshow(infographics)
-plt.axis('off')
+plt.axis("off")
 
 # Delete the plots folder containing the individual plots
 shutil.rmtree("plots")
